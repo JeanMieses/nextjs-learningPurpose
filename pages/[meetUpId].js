@@ -40,7 +40,7 @@ export async function getStaticPaths() {
         //tells nextjs if paths array contains all supported parameter value or some of them
         // false = your path contains all supported meetupId values. We will see a 404 page if user enter a invalid url
         //true = tried to generate a page for upcoming request.
-        fallback: false,
+        fallback: 'blocking',
 
         //we need to add obj to the path array for every id we need to generate a dynamic page
         paths: meetups.map(meetup => ({params: {meetUpId: meetup._id.toString()}}))
